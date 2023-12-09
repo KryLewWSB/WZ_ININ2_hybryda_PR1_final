@@ -1,7 +1,7 @@
 package org.example;
 
-import java.util.Arrays;
-import java.util.Scanner;
+import java.util.*;
+
 
 public class Main {
     public static void main(String[] args) {
@@ -12,13 +12,26 @@ public class Main {
                                             Dzial.IT,
                                             5_000);//utworzenie nowego obiektu
 
-        Pracownik pracownik2 = new Pracownik("Tomasz",
+        Pracownik pracownik2 = new Pracownik("Tadeusz",
+                                            "Nowicki",
+                                            Dzial.IT,
+                                            7_000);//utworzenie nowego obiektu
+
+        Kierownik kierownik1 = new Kierownik("Tomasz",
                                             "Kowalski",
                                             Dzial.KSIEGOWOSC,
-                                            5_000);
+                                            5_000,
+                                            2_000);
 
-        pracownik1.wypiszDane();//wywołanie metody pracownik
-        pracownik2.wypiszDane();//wywołanie metody pracownik
+        List<Pracownik> listaPracownikow = new ArrayList<>();
+        listaPracownikow.add(pracownik1);
+        listaPracownikow.add(pracownik2);
+
+        for(Pracownik pracownik : listaPracownikow) {
+            pracownik.wypiszDane();//wywołanie metody pracownik
+        }
+
+        kierownik1.wypiszDane();//wywołanie metody pracownik
 
 
 

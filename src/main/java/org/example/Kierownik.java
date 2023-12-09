@@ -1,18 +1,11 @@
 package org.example;
 
-public class Pracownik implements InformacjePracownika {
-    protected String imie;
-    protected String nazwisko;
-    protected Dzial dzial;
-    protected int wynagrodzenie;
-
-    public Pracownik(String imie, String nazwisko, Dzial dzial, int wynagrodzenie) {
-        this.imie = imie;
-        this.nazwisko = nazwisko;
-        this.dzial = dzial;
-        this.wynagrodzenie = wynagrodzenie;
+public class Kierownik extends Pracownik implements InformacjePracownika {
+    private int premiaKierownicza;
+    public Kierownik(String imie, String nazwisko, Dzial dzial, int wynagrodzenie, int premiaKierownicza) {
+        super(imie, nazwisko, dzial, wynagrodzenie);
+        this.premiaKierownicza = premiaKierownicza;
     }
-
     @Override
     public void wypiszDane() {
         System.out.println("\n-----------------------------------------------" +
@@ -20,6 +13,7 @@ public class Pracownik implements InformacjePracownika {
                 "\nNazwisko pracownika: " + this.nazwisko +
                 "\nDział pracownika: " + this.dzial +
                 "\nWynagrodzenie pracownika: " + this.wynagrodzenie +
+                "\nPremia Kierownicza: " + this.premiaKierownicza +
                 "\n-----------------------------------------------");
     }
 }
