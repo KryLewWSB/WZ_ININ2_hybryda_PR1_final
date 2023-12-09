@@ -6,19 +6,21 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
+        /*
+        * Zadanie 15. Wybierz kolor.
+        * Poproś użytkownika o podanie kodu koloru (np. "R" - red, "G" - green, "B" - blue) i wyświetl pełną nazwę koloru.
+        * String colorCode = "G";*/
         Scanner scan = new Scanner(System.in);
-        int[] przyjeteLiczby = new int[5];
+        while(true) {
+            System.out.println("Podaj kod koloru R, G, B)");
+            String podanaWartosc = scan.next();
 
-        for (int i = 0; i < przyjeteLiczby.length; i++){
-            System.out.println("Podaj liczbę numer " + (i + 1));
-            przyjeteLiczby[i] = scan.nextInt();
-        }
-
-        System.out.println(Arrays.toString(przyjeteLiczby));//1 sposób wyświetloenia danych z tablicy
-
-        //2 sposób wyświetloenia danych z tablicy:
-        for(int liczba : przyjeteLiczby){
-            System.out.println(liczba);
+            switch (podanaWartosc) {
+                case "R" -> System.out.println("Kolor red / czerwony.");
+                case "G" -> System.out.println("Kolor green / zielony.");
+                case "B" -> System.out.println("Kolor blue / niebieski.");
+                default -> System.out.println("Podałeś zły kod koloru!");
+            }
         }
 
     }
