@@ -7,15 +7,20 @@ public class Main {
     public static void main(String[] args) {
 
         /* Zadanie 24. */
-        Pracownik pracownik1 = new Pracownik();
-        pracownik1.imie = "Adam";
-        pracownik1.nazwisko = "Kowalski";
-        pracownik1.dzial = "IT";
-        pracownik1.wynagrodzenie = 6_000;
-        System.out.println("Imię pracownika: " + pracownik1.imie +
-                        "\nNazwisko pracownika: " + pracownik1.nazwisko +
-                        "\nDział pracownika: " + pracownik1.dzial +
-                        "\nWynagrodzenie pracownika: " + pracownik1.wynagrodzenie);
+        Pracownik pracownik1 = new Pracownik("Anna",
+                                            "Nowak",
+                                            Dzial.IT,
+                                            5_000);//utworzenie nowego obiektu
+
+        Pracownik pracownik2 = new Pracownik("Tomasz",
+                                            "Kowalski",
+                                            Dzial.KSIEGOWOSC,
+                                            5_000);
+
+        pracownik1.wypiszDane();//wywołanie metody pracownik
+        pracownik2.wypiszDane();//wywołanie metody pracownik
+
+
 
     }
 }
